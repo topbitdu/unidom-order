@@ -1,6 +1,7 @@
-# Unidom Order
+# Unidom Order 订单领域模型引擎
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
+[![Gem Version](https://badge.fury.io/rb/unidom-order.svg)](https://badge.fury.io/rb/unidom-order)
 
 Unidom (UNIfied Domain Object Model) is a series of domain model engines. The Order domain model engine includes Order, Order Item, and Order Adjustment models.
 Unidom (统一领域对象模型)是一系列的领域模型引擎。订单领域模型引擎包括订单、订单项和订单调整的模型。
