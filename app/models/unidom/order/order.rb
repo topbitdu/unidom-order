@@ -17,4 +17,6 @@ class Unidom::Order::Order < ActiveRecord::Base
   scope :placed_by, ->(placer) { where placer: placer }
   scope :taken_by,  ->(taker)  { where taker:  taker  }
 
+  include Unidom::Common::Concerns::ModelExtension
+
 end

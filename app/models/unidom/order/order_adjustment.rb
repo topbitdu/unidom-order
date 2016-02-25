@@ -10,4 +10,6 @@ class Unidom::Order::OrderAdjustment < ActiveRecord::Base
 
   scope :adjusted_by, ->(adjusted) { where adjusted: adjusted }
 
+  include Unidom::Common::Concerns::ModelExtension
+
 end

@@ -20,4 +20,6 @@ class Unidom::Order::OrderItem < ActiveRecord::Base
   scope :ordered_is, ->(ordered) { where ordered: ordered }
   scope :placed_by,  ->(placer)  { where placer:  placer  }
 
+  include Unidom::Common::Concerns::ModelExtension
+
 end
