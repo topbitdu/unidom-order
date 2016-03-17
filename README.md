@@ -18,7 +18,60 @@ rake db:migrate
 
 ## Call the Model
 ```ruby
-order = Unidom::Order::Order.valid_at.alive.first
-order.items.valid_at.alive
-order.adjustments.valid_at.alive
+lady = Person.create name: 'Ann'
+shop = Shop.create   name: 'WalMart'
+
+order = Unidom::Order::Order.create(placer: lady,
+  taker:       shop,
+  number:      'ZBCDEFGHIJKL',
+  instruction: 'Please mail to me as soon as possible.',
+  description: 'gifts for my kids',
+  opened_at:   Time.now)
+
+game = Product.create name: 'World War II'
+ball = Product.create name: 'Basketball'
+
+order.items.create(ordered: game,
+  placer:          lady,
+  ordinal:         1,
+  unit_price:      19.99,
+  quantity:        1,
+  purchase_amount: 19.99,
+  subtotal_amount: 23.98,
+  instruction:     'We need the 2nd version.',
+  description:     'video game',
+  opened_at:       Time.now)
+order.items.create(ordered: ball,
+  placer:          lady,
+  ordinal:         2,
+  unit_price:      35.00,
+  quantity:        2,
+  purchase_amount: 70.00,
+  subtotal_amount: 70.00,
+  instruction:     'We need 2 balls.',
+  description:     'video game',
+  opened_at:       Time.now)
+
+order.adjustments.create(
+  adjustment_factor_code: 'FRGT',
+  calculation_code:       'AMNT',
+  amount:                 5.00,
+  instruction:            'arrive in 3 days',
+  description:            'freight',
+  opened_at:              Time.now)
+order.items.first.create(
+  adjustment_factor_code: 'TAXF',
+  calculation_code:       'PCNT',
+  amount:                 15.00,
+  instruction:            'tax rate is 15%',
+  description:            'tax',
+  opened_at:              Time.now)
+
+order.purchase_amount  = order.items.sum('purchase_amount')
+order.aggregate_amount = order.items.sum('subtotal_amount')+order.adjustments.sum('amount')
+order.save
+
+order = Unidom::Order::Order.where(number: 'ZBCDEFGHIJKL').first
+order.items       # Order Items
+order.adjustments # Order Adjustments
 ```
