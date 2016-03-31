@@ -19,6 +19,7 @@ gem 'unidom-order'
 ```shell
 rake db:migrate
 ```
+The migration versions start with 200206.
 
 ## Call the Model
 ```ruby
