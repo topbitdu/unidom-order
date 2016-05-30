@@ -30,8 +30,8 @@ class CreateUnidomOrders < ActiveRecord::Migration
 
     add_index :unidom_orders, :placer_id
     add_index :unidom_orders, :taker_id
-    add_index :unidom_orders, :slug,   unique: true
     add_index :unidom_orders, :number, unique: true
+    add_index :unidom_orders, :slug,   unique: true
 
   end
 
