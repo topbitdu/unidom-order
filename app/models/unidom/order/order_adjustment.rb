@@ -12,13 +12,13 @@ class Unidom::Order::OrderAdjustment < ActiveRecord::Base
 
   scope :adjusted_is, ->(adjusted) { where adjusted: adjusted }
 
-  def self.adjust!(adjusted, amount, adjustment_factor_code = 'FRGT')
-    adjustment = self.adjusted_is(adjusted).adjustment_factor_coded_as(adjustment_factor_code).valid_at.alive.first
+  def self.adjust!(adjusted, amount: 0, due_to: 'FRGT')
+    adjustment = self.adjusted_is(adjusted).adjustment_factor_coded_as(due_to).valid_at.alive.first
     if adjustment.present?
       adjustment.amount = amount
       adjustment.save!
     else
-      create! adjusted: adjusted, amount: amount, adjustment_factor_code: adjustment_factor_code
+      create! adjusted: adjusted, amount: amount, adjustment_factor_code: due_to
     end
   end
 

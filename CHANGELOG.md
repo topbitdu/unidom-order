@@ -15,3 +15,7 @@
 2. Improved the Order Adjustment model to rename the #adjusted_by scope to #adjusted_is
 3. Improved the Order Adjustment model to add the ::adjust! method
 4. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v0.9
+
+## v1.0
+1. Improved the Order Item model to support the Keyword Arguments
+2. Improved the Order Adjustment model to support the Keyword Arguments

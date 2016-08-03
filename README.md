@@ -80,9 +80,9 @@ order = Unidom::Order::Order.where(number: 'ZBCDEFGHIJKL').first
 order.items       # Order Items
 order.adjustments # Order Adjustments
 
-Unidom::Order::OrderItem.order! order, product, 1080.00, 2
+Unidom::Order::OrderItem.order! product, of: order, unit_price: 1080.00, quantity: 2
 # Add the given product into the given order
 
-Unidom::Order::OrderAdjustment.adjust! order, 20, 'DSCT'
+Unidom::Order::OrderAdjustment.adjust! order, amount: 20, due_to: 'DSCT'
 # Add the given adjustment into the given order
 ```

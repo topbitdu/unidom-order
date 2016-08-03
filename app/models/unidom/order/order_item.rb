@@ -22,8 +22,8 @@ class Unidom::Order::OrderItem < ActiveRecord::Base
   scope :ordered_is, ->(ordered) { where ordered: ordered }
   scope :placed_by,  ->(placer)  { where placer:  placer  }
 
-  def self.order!(order, ordered, unit_price, quantity = 1, placer = order.placer)
-    item = order.items.ordered_is(ordered).placed_by(placer).valid_at.alive.first
+  def self.order!(ordered, of: nil, by: of.placer, unit_price: 0, quantity: 1)
+    item = of.items.ordered_is(ordered).placed_by(by).valid_at.alive.first
     if item.present?
       item.quantity        += quantity
       item.unit_price      =  unit_price
@@ -31,8 +31,8 @@ class Unidom::Order::OrderItem < ActiveRecord::Base
       item.subtotal_amount =  item.purchase_amount+item.adjustments.valid_at.alive.sum(:amount).to_f
       item.save!
     else
-      ordinal = 1+order.items.valid_at.alive.maximum(:ordinal).to_i
-      order.items.create! ordered: ordered, placer: placer, ordinal: ordinal, quantity: quantity, unit_price: unit_price, purchase_amount: unit_price*quantity, subtotal_amount: unit_price*quantity, opened_at: Time.now
+      ordinal = 1+of.items.valid_at.alive.maximum(:ordinal).to_i
+      of.items.create! ordered: ordered, placer: by, ordinal: ordinal, quantity: quantity, unit_price: unit_price, purchase_amount: unit_price*quantity, subtotal_amount: unit_price*quantity, opened_at: Time.now
     end
   end
 
