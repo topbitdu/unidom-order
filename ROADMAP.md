@@ -20,6 +20,9 @@
 1. Improve the Order Item model to support the Keyword Arguments
 2. Improve the Order Adjustment model to support the Keyword Arguments
 
+## v1.0.1
+1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
+
 ## v1.1
 1. As Adjusted concern
 2. As Order Placer concern
