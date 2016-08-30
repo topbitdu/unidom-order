@@ -17,6 +17,7 @@ class Unidom::Order::OrderAdjustment < ActiveRecord::Base
     if adjustment.present?
       adjustment.amount = amount
       adjustment.save!
+      adjustment
     else
       create! adjusted: adjusted, amount: amount, adjustment_factor_code: due_to
     end

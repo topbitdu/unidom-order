@@ -86,3 +86,17 @@ Unidom::Order::OrderItem.order! product, of: order, unit_price: 1080.00, quantit
 Unidom::Order::OrderAdjustment.adjust! order, amount: 20, due_to: 'DSCT'
 # Add the given adjustment into the given order
 ```
+
+## Include the Concerns
+```ruby
+include Unidom::Order::AsOrderPlacer
+include Unidom::Order::AsOrderTaker
+```
+
+### As Order Placer concern
+The As Order Placer concern do the following tasks for the includer automatically:  
+1. Define the has_many :placed_orders macro as: ``has_many :placed_orders, class_name: 'Unidom::Order::Order', as: :placer``
+
+### As Order Taker concern
+The As Order Taker concern do the following tasks for the includer automatically:  
+1. Define the has_many :taken_orders macro as: ``has_many :taken_orders, class_name: 'Unidom::Order::Order', as: :taker``

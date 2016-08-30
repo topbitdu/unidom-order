@@ -22,3 +22,11 @@
 
 ## v1.0.1
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
+
+## v1.1
+1. As Adjusted concern
+2. As Order Placer concern
+3. As Order Taker concern
+4. Improved the Order Adjustment model to improve the return value of the #adjust! method
+5. Improved the Order model to include the As Adjusted concern
+6. Improved the Order Item model to include the As Adjusted concern

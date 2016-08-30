@@ -5,6 +5,7 @@ class Unidom::Order::Order < ActiveRecord::Base
   self.table_name = 'unidom_orders'
 
   include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Order::Concerns::AsAdjusted
 
   validates :number,           presence: true, length:       { is: self.columns_hash['number'].limit  }
   validates :purchase_amount,  presence: true, numericality: { less_than: 1000000000, greater_than: 0 }
@@ -13,8 +14,7 @@ class Unidom::Order::Order < ActiveRecord::Base
   belongs_to :placer, polymorphic: true
   belongs_to :taker,  polymorphic: true
 
-  has_many :items,       class_name: 'Unidom::Order::OrderItem'
-  has_many :adjustments, class_name: 'Unidom::Order::OrderAdjustment', as: :adjusted
+  has_many :items, class_name: 'Unidom::Order::OrderItem'
 
   scope :placed_by, ->(placer) { where placer: placer }
   scope :taken_by,  ->(taker)  { where taker:  taker  }
