@@ -32,6 +32,5 @@
 6. Improve the Order Item model to include the As Adjusted concern
 
 ## v1.2
-1. Improve the As Adjusted concern to add the #adjust! method
-2. Improve the As Order Placer concern to add the #place_order! method
-3. Improve the As Order Taker concern to add the #take_order! method
+1. Improve the As Adjusted concern to add the #is_adjusted! method
+2. Improve the Order Adjustment model for the ::adjust! method

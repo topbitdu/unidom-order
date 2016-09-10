@@ -83,15 +83,21 @@ order.adjustments # Order Adjustments
 Unidom::Order::OrderItem.order! product, of: order, unit_price: 1080.00, quantity: 2
 # Add the given product into the given order
 
-Unidom::Order::OrderAdjustment.adjust! order, amount: 20, due_to: 'DSCT'
+Unidom::Order::OrderAdjustment.adjust! order, amount: 20, due_to: 'DSCT', opened_at: Time.now
 # Add the given adjustment into the given order
 ```
 
 ## Include the Concerns
 ```ruby
+include Unidom::Order::AsAdjusted
 include Unidom::Order::AsOrderPlacer
 include Unidom::Order::AsOrderTaker
 ```
+
+### As Adjusted concern
+The As Adjusted concern do the following tasks for the includer automatically:  
+1. Define the has_many :adjustments macro as: ``has_many :adjustments, class_name: 'Unidom::Order::OrderAdjustment', as: :adjusted``
+2. Define the #is_adjusted! method as: ``is_adjusted!(amount, due_to: 'FRGT', at: Time.now)``
 
 ### As Order Placer concern
 The As Order Placer concern do the following tasks for the includer automatically:  
