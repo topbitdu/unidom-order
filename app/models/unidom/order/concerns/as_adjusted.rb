@@ -22,6 +22,13 @@ module Unidom::Order::Concerns::AsAdjusted
       adjustment
     end
 
+    def is_adjusted?(due_to: 'FRGT', at: Time.now)
+      adjustments.adjustment_factor_coded_as(due_to).valid_at(now: at).alive.exists?
+    end
+
+  end
+
+  module ClassMethods
   end
 
 end
