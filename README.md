@@ -6,22 +6,34 @@
 Unidom (UNIfied Domain Object Model) is a series of domain model engines. The Order domain model engine includes Order, Order Item, and Order Adjustment models.
 Unidom (统一领域对象模型)是一系列的领域模型引擎。订单领域模型引擎包括订单、订单项和订单调整的模型。
 
+
+
 ## Recent Update
+
 Check out the [Road Map](ROADMAP.md) to find out what's the next.
 Check out the [Change Log](CHANGELOG.md) to find out what's new.
 
+
+
 ## Usage in Gemfile
+
 ```ruby
 gem 'unidom-order'
 ```
 
+
+
 ## Run the Database Migration
+
 ```shell
 rake db:migrate
 ```
 The migration versions start with 200206.
 
+
+
 ## Call the Model
+
 ```ruby
 lady = Person.create name: 'Ann'
 shop = Shop.create   name: 'WalMart'
@@ -87,7 +99,10 @@ Unidom::Order::OrderAdjustment.adjust! order, amount: 20, due_to: 'DSCT', opened
 # Add the given adjustment into the given order
 ```
 
+
+
 ## Include the Concerns
+
 ```ruby
 include Unidom::Order::AsAdjusted
 include Unidom::Order::AsOrderPlacer
@@ -98,6 +113,7 @@ include Unidom::Order::AsOrderTaker
 The As Adjusted concern do the following tasks for the includer automatically:  
 1. Define the has_many :adjustments macro as: ``has_many :adjustments, class_name: 'Unidom::Order::OrderAdjustment', as: :adjusted``
 2. Define the #is_adjusted! method as: ``is_adjusted!(amount, due_to: 'FRGT', at: Time.now)``
+3. Define the #is_adjusted? method as: ``is_adjusted?(due_to: 'FRGT', at: Time.now)``
 
 ### As Order Placer concern
 The As Order Placer concern do the following tasks for the includer automatically:  
