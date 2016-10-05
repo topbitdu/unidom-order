@@ -8,4 +8,7 @@ module Unidom::Order::Concerns::AsOrderPlacer
 
   end
 
+  module ClassMethods
+  end
+
 end
