@@ -8,4 +8,7 @@ module Unidom::Order::Concerns::AsOrderTaker
 
   end
 
+  module ClassMethods
+  end
+
 end
