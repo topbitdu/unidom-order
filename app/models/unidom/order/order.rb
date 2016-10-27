@@ -1,6 +1,6 @@
 # Order 是订单。
 
-class Unidom::Order::Order < ActiveRecord::Base
+class Unidom::Order::Order < Unidom::Order::ApplicationRecord
 
   self.table_name = 'unidom_orders'
 
