@@ -1,6 +1,6 @@
 # Order Item 是订单项。
 
-class Unidom::Order::OrderItem < ActiveRecord::Base
+class Unidom::Order::OrderItem < Unidom::Order::ApplicationRecord
 
   self.table_name = 'unidom_order_items'
 
