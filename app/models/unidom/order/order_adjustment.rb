@@ -1,6 +1,6 @@
 # Order Adjustment 是订单调整项。
 
-class Unidom::Order::OrderAdjustment < ActiveRecord::Base
+class Unidom::Order::OrderAdjustment < Unidom::Order::ApplicationRecord
 
   self.table_name = 'unidom_order_adjustments'
 
