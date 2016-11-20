@@ -1,7 +1,7 @@
 # Unidom Order Roadmap 订单领域模型引擎路线图
 
 ## v0.1
-1. Order model & migration
+1. Order model & migration (20020601000000)
 2. Order Item model & migration
 3. Order Adjustment model & migration
 
