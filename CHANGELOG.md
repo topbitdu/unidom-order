@@ -3,7 +3,7 @@
 ## v0.1
 1. Order model & migration (20020601000000)
 2. Order Item model & migration (20020602000000)
-3. Order Adjustment model & migration
+3. Order Adjustment model & migration (20020603000000)
 
 ## v0.2
 1. Improved the Order model to include the Model Extension concern
