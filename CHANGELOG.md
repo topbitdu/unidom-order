@@ -11,7 +11,7 @@
 3. Improved the Order Adjustment model to include the Model Extension concern
 
 ## v0.3
-1. Improved the Order Item model to add the ::order! method
+1. Improved the Order Item model to add the .``order!`` method
 2. Improved the Order Adjustment model to rename the #adjusted_by scope to #adjusted_is
 3. Improved the Order Adjustment model to add the ::adjust! method
 4. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v0.9
