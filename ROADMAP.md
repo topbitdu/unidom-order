@@ -6,7 +6,7 @@
 3. Order Adjustment model & migration (20020603000000)
 
 ## v0.2
-1. Improved the Order model to include the Model Extension concern
+1. Improve the Order model to include the Model Extension concern
 2. Improved the Order Item model to include the Model Extension concern
 3. Improved the Order Adjustment model to include the Model Extension concern
 
