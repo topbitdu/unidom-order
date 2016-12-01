@@ -7,7 +7,7 @@
 
 ## v0.2
 1. Improve the Order model to include the Model Extension concern
-2. Improved the Order Item model to include the Model Extension concern
+2. Improve the Order Item model to include the Model Extension concern
 3. Improved the Order Adjustment model to include the Model Extension concern
 
 ## v0.3
