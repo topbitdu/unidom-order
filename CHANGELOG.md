@@ -27,7 +27,7 @@
 1. As Adjusted concern
 2. As Order Placer concern
 3. As Order Taker concern
-4. Improved the Order Adjustment model for the return value of the #adjust! method
+4. Improved the Order Adjustment model for the return value of the #``adjust!`` method
 5. Improved the Order model to include the As Adjusted concern
 6. Improved the Order Item model to include the As Adjusted concern
 
