@@ -32,7 +32,7 @@
 6. Improve the Order Item model to include the As Adjusted concern
 
 ## v1.2
-1. Improve the As Adjusted concern to add the #is_adjusted! method
+1. Improve the As Adjusted concern to add the #``is_adjusted!`` method
 2. Improve the Order Adjustment model for the ::adjust! method
 
 ## v1.3
