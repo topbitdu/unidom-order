@@ -33,7 +33,7 @@
 
 ## v1.2
 1. Improved the As Adjusted concern to add the #``is_adjusted!`` method
-2. Improved the Order Adjustment model for the ::adjust! method
+2. Improved the Order Adjustment model for the .``adjust!`` method
 
 ## v1.3
 1. Improved the As Adjusted concern to add the #is_adjusted? method
