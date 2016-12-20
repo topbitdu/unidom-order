@@ -1,0 +1,15 @@
+enum:
+
+  unidom_adjustment_factor:
+    discount_adjustment:
+      code: DSCT
+    surcharge_adjustment:
+      code: SCHG
+    sales_tax:
+      code: SLTX
+    shipping_and_handling_charges:
+      code: SPHD
+    fee:
+      code: FEES
+    miscellaneous_charge:
+      code: MISC
