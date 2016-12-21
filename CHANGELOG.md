@@ -36,7 +36,7 @@
 2. Improved the Order Adjustment model for the .``adjust!`` method
 
 ## v1.3
-1. Improved the As Adjusted concern to add the #is_adjusted? method
+1. Improved the As Adjusted concern to add the #``is_adjusted?`` method
 
 ## v1.3.1
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.6
