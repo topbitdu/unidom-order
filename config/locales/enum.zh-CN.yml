@@ -1,0 +1,10 @@
+'zh-CN':
+  enum:
+
+    unidom_adjustment_factor:
+      discount_adjustment:           折扣调整
+      surcharge_adjustment:          额外费调整
+      sales_tax:                     销售税
+      shipping_and_handling_charges: 装运和处理费
+      fee:                           手续费
+      miscellaneous_charge:          杂项收费
