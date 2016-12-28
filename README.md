@@ -126,3 +126,18 @@ The As Order Placer concern do the following tasks for the includer automaticall
 
 The As Order Taker concern do the following tasks for the includer automatically:  
 1. Define the has_many :taken_orders macro as: ``has_many :taken_orders, class_name: 'Unidom::Order::Order', as: :taker``
+
+
+
+## Enum codes
+
+### Adjustment Factor enum code 调整因素
+
+```ruby
+Unidom::Order::AdjustmentFactor::DISCOUNT_ADJUSTMENT           # 折扣调整
+Unidom::Order::AdjustmentFactor::SURCHARGE_ADJUSTMENT          # 额外费调整
+Unidom::Order::AdjustmentFactor::SALES_TAX                     # 销售税
+Unidom::Order::AdjustmentFactor::SHIPPING_AND_HANDLING_CHARGES # 装运和处理费
+Unidom::Order::AdjustmentFactor::FEE                           # 手续费
+Unidom::Order::AdjustmentFactor::MISCELLANEOUS_CHARGE          # 杂项收费
+```
