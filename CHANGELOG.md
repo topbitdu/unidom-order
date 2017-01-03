@@ -50,3 +50,7 @@
 ## v1.4
 1. Adjustment Factor enum code
 2. Improve the Order Adjustment model to configure the Adjustment Factor enum code
+
+## v1.4.1
+1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.8
+2. Improve the Engine class to include the Engine Extension
