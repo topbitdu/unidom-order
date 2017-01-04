@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    unidom-order (1.4)
-      unidom-common (>= 1.7.1)
+    unidom-order (1.4.1)
+      unidom-common (~> 1.8)
 
 GEM
   remote: https://rubygems.org/
