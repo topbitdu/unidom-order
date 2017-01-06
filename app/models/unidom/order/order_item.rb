@@ -1,3 +1,4 @@
+##
 # Order Item 是订单项。
 
 class Unidom::Order::OrderItem < Unidom::Order::ApplicationRecord
