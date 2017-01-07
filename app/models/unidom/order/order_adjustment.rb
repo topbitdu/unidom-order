@@ -1,3 +1,4 @@
+##
 # Order Adjustment 是订单调整项。
 
 class Unidom::Order::OrderAdjustment < Unidom::Order::ApplicationRecord
