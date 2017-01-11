@@ -112,19 +112,24 @@ include Unidom::Order::AsOrderTaker
 
 ### As Adjusted concern
 
-The As Adjusted concern do the following tasks for the includer automatically:  
-1. Define the has_many :adjustments macro as: ``has_many :adjustments, class_name: 'Unidom::Order::OrderAdjustment', as: :adjusted``  
-2. Define the #is_adjusted! method as: ``is_adjusted!(amount, due_to: 'FRGT', at: Time.now)``  
+The As Adjusted concern do the following tasks for the includer automatically:
+
+1. Define the has_many :adjustments macro as: ``has_many :adjustments, class_name: 'Unidom::Order::OrderAdjustment', as: :adjusted``
+
+2. Define the #is_adjusted! method as: ``is_adjusted!(amount, due_to: 'FRGT', at: Time.now)``
+
 3. Define the #is_adjusted? method as: ``is_adjusted?(due_to: 'FRGT', at: Time.now)``
 
 ### As Order Placer concern
 
-The As Order Placer concern do the following tasks for the includer automatically:  
+The As Order Placer concern do the following tasks for the includer automatically:
+
 1. Define the has_many :placed_orders macro as: ``has_many :placed_orders, class_name: 'Unidom::Order::Order', as: :placer``
 
 ### As Order Taker concern
 
-The As Order Taker concern do the following tasks for the includer automatically:  
+The As Order Taker concern do the following tasks for the includer automatically:
+
 1. Define the has_many :taken_orders macro as: ``has_many :taken_orders, class_name: 'Unidom::Order::Order', as: :taker``
 
 
