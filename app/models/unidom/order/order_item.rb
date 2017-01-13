@@ -22,6 +22,9 @@ class Unidom::Order::OrderItem < Unidom::Order::ApplicationRecord
   scope :ordered_is, ->(ordered) { where ordered: ordered }
   scope :placed_by,  ->(placer)  { where placer:  placer  }
 
+  ##
+  # 订购商品 ordered ，放入订单 of 。订购者为 by ，缺省为订单的下单者。单价为 unit_price ，缺省值为 0 。数量为 quantity ，缺省值为 1。如：
+  # Unidom::Order::OrderItem.order! coca_cola, of: order, by: current_person, unit_price: 3.50, quantity: 2
   def self.order!(ordered, of: nil, by: of.placer, unit_price: 0, quantity: 1)
     item = of.items.ordered_is(ordered).placed_by(by).valid_at.alive.first
     if item.present?
