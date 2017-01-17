@@ -20,4 +20,4 @@ class Unidom::Order::Order < Unidom::Order::ApplicationRecord
   scope :placed_by, ->(placer) { where placer: placer }
   scope :taken_by,  ->(taker)  { where taker:  taker  }
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Order::Order'
