@@ -39,4 +39,4 @@ class Unidom::Order::OrderItem < Unidom::Order::ApplicationRecord
     end
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Order::OrderItem'
