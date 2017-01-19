@@ -35,4 +35,4 @@ class Unidom::Order::OrderAdjustment < Unidom::Order::ApplicationRecord
     adjustment
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Order::OrderAdjustment'
