@@ -8,7 +8,7 @@ class Unidom::Order::OrderItem < Unidom::Order::ApplicationRecord
   include Unidom::Common::Concerns::ModelExtension
   include Unidom::Order::Concerns::AsAdjusted
 
-  validates :ordinal,         presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 1_000_000_000 }
+  #validates :ordinal,         presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 1_000_000_000 }
   validates :unit_price,      presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
   validates :quantity,        presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
   validates :purchase_amount, presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
