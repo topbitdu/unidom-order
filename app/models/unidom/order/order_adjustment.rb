@@ -8,7 +8,7 @@ class Unidom::Order::OrderAdjustment < Unidom::Order::ApplicationRecord
   include Unidom::Common::Concerns::ModelExtension
   include ProgneTapera::EnumCode
 
-  validates :amount, presence: true, numericality: { less_than: 1000000000, greater_than: -1000000000 }
+  validates :amount, presence: true, numericality: { less_than: 1_000_000_000, greater_than: -1_000_000_000 }
 
   belongs_to :adjusted, polymorphic: true
 
