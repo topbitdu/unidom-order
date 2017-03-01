@@ -79,6 +79,32 @@ describe Unidom::Order::Order, type: :model do
       { aggregate_amount: '1_000_000_000.01' } => 1,
       { aggregate_amount: 1_000_000_000.01   } => 1
 
+    order_item_1_attributes = {
+      ordered_id:      SecureRandom.uuid,
+      ordered_type:    'Unidom::Order::Ordered::Mock',
+      placer_id:       SecureRandom.uuid,
+      placer_type:     'Unidom::Order::Placer::Mock',
+      ordinal:         1,
+      unit_price:      10.00,
+      quantity:        12.00,
+      purchase_amount: 120.00,
+      subtotal_amount: 100.00
+    }
+
+    order_item_2_attributes = {
+      ordered_id:      SecureRandom.uuid,
+      ordered_type:    'Unidom::Order::Ordered::Mock',
+      placer_id:       SecureRandom.uuid,
+      placer_type:     'Unidom::Order::Placer::Mock',
+      ordinal:         2,
+      unit_price:      20.00,
+      quantity:        24.00,
+      purchase_amount: 480.00,
+      subtotal_amount: 400.00
+    }
+
+    it_behaves_like 'has_many', model_attributes, :items, Unidom::Order::OrderItem, [ order_item_1_attributes, order_item_2_attributes ]
+
   end
 
 end
