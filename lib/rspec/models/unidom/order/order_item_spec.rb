@@ -111,6 +111,18 @@ describe Unidom::Order::OrderItem, type: :model do
       { subtotal_amount: '1_000_000_000.01' } => 1,
       { subtotal_amount: 1_000_000_000.01   } => 1
 
+    order_attributes = {
+      placer_id:        SecureRandom.uuid,
+      placer_type:      'Unidom::Order::Placer::Mock',
+      taker_id:         SecureRandom.uuid,
+      taker_type:       'Unidom::Order::Taker::Mock',
+      number:           '202001019527',
+      purchase_amount:  10.00,
+      aggregate_amount: 12.00
+    }
+
+    it_behaves_like 'belongs_to', model_attributes, :order, Unidom::Order::Order, order_attributes
+
   end
 
 end
