@@ -123,6 +123,8 @@ describe Unidom::Order::OrderItem, type: :model do
 
     it_behaves_like 'belongs_to', model_attributes, :order, Unidom::Order::Order, order_attributes
 
+    it_behaves_like 'monomorphic scope', model_attributes, :order_is, :order
+
   end
 
 end
