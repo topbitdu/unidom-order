@@ -74,6 +74,8 @@ describe Unidom::Order::OrderAdjustment, type: :model do
     it_behaves_like 'belongs_to', model_attributes, :adjusted, Unidom::Order::Order,     order_attributes
     it_behaves_like 'belongs_to', model_attributes, :adjusted, Unidom::Order::OrderItem, order_item_attributes
 
+    it_behaves_like 'polymorphic scope', model_attributes, :adjusted_is, :adjusted, [ Unidom::Order::Order, Unidom::Order::OrderItem ]
+
   end
 
 end
