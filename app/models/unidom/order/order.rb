@@ -9,8 +9,8 @@ class Unidom::Order::Order < Unidom::Order::ApplicationRecord
   include Unidom::Order::Concerns::AsAdjusted
 
   validates :number,           presence: true, length:       { is: self.columns_hash['number'].limit }
-  validates :purchase_amount,  presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
-  validates :aggregate_amount, presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
+  validates :purchase_amount,  presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000_000 }
+  validates :aggregate_amount, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000_000 }
 
   belongs_to :placer, polymorphic: true
   belongs_to :taker,  polymorphic: true
