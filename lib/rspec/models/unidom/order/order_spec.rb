@@ -35,49 +35,10 @@ describe Unidom::Order::Order, type: :model do
       { number: '9'*(number_length+1) } => 1,
       { number: 'A'*(number_length+1) } => 1
 
-    it_behaves_like 'validates', model_attributes, :purchase_amount,
-      {                                     } => 0,
-      { purchase_amount: nil                } => 2,
-      { purchase_amount: ''                 } => 2,
-      { purchase_amount: '1'                } => 0,
-      { purchase_amount: 1                  } => 0,
-      { purchase_amount: 'A'                } => 1,
-      { purchase_amount: '1.23'             } => 0,
-      { purchase_amount: 1.23               } => 0,
-      { purchase_amount: '-0.01'            } => 1,
-      { purchase_amount: -0.01              } => 1,
-      { purchase_amount: '0'                } => 1,
-      { purchase_amount: 0                  } => 1,
-      { purchase_amount: '0.01'             } => 0,
-      { purchase_amount: 0.01               } => 0,
-      { purchase_amount: '999_999_999.99'   } => 0,
-      { purchase_amount: 999_999_999.99     } => 0,
-      { purchase_amount: '1_000_000_000'    } => 1,
-      { purchase_amount: 1_000_000_000      } => 1,
-      { purchase_amount: '1_000_000_000.01' } => 1,
-      { purchase_amount: 1_000_000_000.01   } => 1
-
-    it_behaves_like 'validates', model_attributes, :aggregate_amount,
-      {                                      } => 0,
-      { aggregate_amount: nil                } => 2,
-      { aggregate_amount: ''                 } => 2,
-      { aggregate_amount: '1'                } => 0,
-      { aggregate_amount: 1                  } => 0,
-      { aggregate_amount: 'A'                } => 1,
-      { aggregate_amount: '1.23'             } => 0,
-      { aggregate_amount: 1.23               } => 0,
-      { aggregate_amount: '-0.01'            } => 1,
-      { aggregate_amount: -0.01              } => 1,
-      { aggregate_amount: '0'                } => 1,
-      { aggregate_amount: 0                  } => 1,
-      { aggregate_amount: '0.01'             } => 0,
-      { aggregate_amount: 0.01               } => 0,
-      { aggregate_amount: '999_999_999.99'   } => 0,
-      { aggregate_amount: 999_999_999.99     } => 0,
-      { aggregate_amount: '1_000_000_000'    } => 1,
-      { aggregate_amount: 1_000_000_000      } => 1,
-      { aggregate_amount: '1_000_000_000.01' } => 1,
-      { aggregate_amount: 1_000_000_000.01   } => 1
+    it_behaves_like 'validates numericality', model_attributes, :purchase_amount,
+      range: 0..1_000_000_000, minimum_inclusive: true, maximum_inclusive: true
+    it_behaves_like 'validates numericality', model_attributes, :aggregate_amount,
+      range: 0..1_000_000_000, minimum_inclusive: true, maximum_inclusive: true
 
     order_item_1_attributes = {
       ordered_id:      SecureRandom.uuid,
