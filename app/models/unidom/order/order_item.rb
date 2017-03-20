@@ -9,16 +9,16 @@ class Unidom::Order::OrderItem < Unidom::Order::ApplicationRecord
   include Unidom::Order::Concerns::AsAdjusted
 
   #validates :ordinal,         presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 1_000_000_000 }
-  validates :unit_price,      presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
-  validates :quantity,        presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
-  validates :purchase_amount, presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
-  validates :subtotal_amount, presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
+  validates :unit_price,      presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000_000 }
+  validates :quantity,        presence: true, numericality: { greater_than:             0, less_than_or_equal_to: 1_000_000_000 }
+  validates :purchase_amount, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000_000 }
+  validates :subtotal_amount, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000_000 }
 
   belongs_to :order,   class_name:  'Unidom::Order::Order'
   belongs_to :ordered, polymorphic: true
   belongs_to :placer,  polymorphic: true
 
-  scope :order_is,   ->(order)   { where order_id: (order.respond_to?(:id) ? order.id : order) }
+  scope :order_is,   ->(order)   { where order:   order   }
   scope :ordered_is, ->(ordered) { where ordered: ordered }
   scope :placed_by,  ->(placer)  { where placer:  placer  }
 
