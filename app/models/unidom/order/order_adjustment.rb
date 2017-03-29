@@ -20,6 +20,12 @@ class Unidom::Order::OrderAdjustment < Unidom::Order::ApplicationRecord
   # 对订单或者订单项 adjusted 进行调整。调整金额为 amount ，缺省为 0 。调整原因是 due_to ，缺省是 FRGT 。调整时间是 opened_at ，缺省为当前时间。如：
   # Unidom::Order::OrderAdjustment.adjust! order, amount: 7.90, due_to: 'LTAX'
   def self.adjust!(adjusted, amount: 0, due_to: 'FRGT', opened_at: Time.now)
+
+    assert_present! :adjusted,  adjusted
+    assert_present! :amount,    amount
+    assert_present! :due_to,    due_to
+    assert_present! :opened_at, opened_at
+
     query      = adjusted_is(adjusted).adjustment_factor_coded_as(due_to).valid_at(now: opened_at).alive
     adjustment = query.first
     if adjustment.present?
