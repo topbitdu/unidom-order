@@ -21,8 +21,6 @@ describe Unidom::Order::OrderAdjustment, type: :model do
     it_behaves_like 'validates numericality', model_attributes, :amount,
       range: -1_000_000_000..1_000_000_000, minimum_inclusive: true,  maximum_inclusive: true
 
-    it_behaves_like 'ProgneTapera::EnumCode', described_class.new(model_attributes), :adjustment_factor, Unidom::Order::AdjustmentFactor
-
     order_attributes = {
       placer_id:        SecureRandom.uuid,
       placer_type:      'Unidom::Order::Placer::Mock',
@@ -50,6 +48,11 @@ describe Unidom::Order::OrderAdjustment, type: :model do
     it_behaves_like 'belongs_to', model_attributes, :adjusted, Unidom::Order::OrderItem, order_item_attributes
 
     it_behaves_like 'polymorphic scope', model_attributes, :adjusted_is, :adjusted, [ Unidom::Order::Order, Unidom::Order::OrderItem ]
+
+    it_behaves_like 'ProgneTapera::EnumCode', described_class.new(model_attributes), :adjustment_factor, Unidom::Order::AdjustmentFactor
+
+    adjusted = Unidom::Order::Order.create! order_attributes
+    it_behaves_like 'assert_present!', described_class, :adjust!, [ adjusted, amount: 0, due_to: 'FRGT', opened_at: Time.now ], [ { 0 => :adjusted }, :amount, :due_to, :opened_at ]
 
   end
 
