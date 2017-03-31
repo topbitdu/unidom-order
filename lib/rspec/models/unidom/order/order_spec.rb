@@ -18,10 +18,9 @@ describe Unidom::Order::Order, type: :model do
       aggregate_amount: 12.00
     }
 
-    number_length = described_class.columns_hash['number'].limit
-
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
+    number_length = described_class.columns_hash['number'].limit
     it_behaves_like 'validates', model_attributes, :number,
       {             } => 0,
       { number: nil } => 2,
