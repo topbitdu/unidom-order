@@ -91,3 +91,7 @@
 ## v1.5.6
 1. Improve the Order Adjustment model for the argument validations of the .adjust! method
 2. Improve the Order Adjustment spec for the argument validations of the .adjust! method
+
+## v1.5.7
+1. As Order Placer shared examples
+2. RSpec shared examples manifest
