@@ -169,6 +169,8 @@ end
 
 ## RSpec examples
 
+### RSpec example manifest (run automatically)
+
 ```ruby
 # spec/models/unidom_spec.rb
 require 'unidom/order/models_rspec'
@@ -178,4 +180,25 @@ require 'unidom/order/types_rspec'
 
 # spec/validators/unidom_spec.rb
 require 'unidom/order/validators_rspec'
+```
+
+### RSpec shared examples (to be integrated)
+
+```ruby
+# lib/unidom.rb
+Unidom::Party::Person.class_eval do
+
+  include Unidom::Order::Concerns::AsOrderPlacer
+
+end
+
+# spec/support/unidom_rspec_shared_examples.rb
+require 'unidom/order/rspec_shared_examples'
+
+# spec/models/unidom/party/person_spec.rb
+describe Unidom::Party::Person, type: :model do
+
+  it_behaves_like 'Unidom::Order::Concerns::AsOrderPlacer', model_attributes
+
+end
 ```
