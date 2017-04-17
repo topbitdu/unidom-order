@@ -95,3 +95,7 @@
 ## v1.5.7
 1. As Order Placer shared examples
 2. RSpec shared examples manifest
+
+## v1.5.8
+1. As Order Taker shared examples
+2. Improve the RSpec shared examples manifest to require the As Order Taker shared examples

@@ -192,6 +192,12 @@ Unidom::Party::Person.class_eval do
 
 end
 
+Unidom::Party::Shop.class_eval do
+
+  include Unidom::Order::Concerns::AsOrderTaker
+
+end
+
 # spec/support/unidom_rspec_shared_examples.rb
 require 'unidom/order/rspec_shared_examples'
 
@@ -199,6 +205,13 @@ require 'unidom/order/rspec_shared_examples'
 describe Unidom::Party::Person, type: :model do
 
   it_behaves_like 'Unidom::Order::Concerns::AsOrderPlacer', model_attributes
+
+end
+
+# spec/models/unidom/party/shop_spec.rb
+describe Unidom::Party::Shop, type: :model do
+
+  it_behaves_like 'Unidom::Order::Concerns::AsOrderTaker', model_attributes
 
 end
 ```
