@@ -70,7 +70,7 @@
 3. Improved the Order Adjustment spec for the validations on the #amount attribute, & the #adjustment_factor_code attribute
 
 ## v1.5.2
-1. Improve the Order spec for the ``has_many :items, class_name: 'Unidom::Order::OrderItem'`` macro
+1. Improved the Order spec for the ``has_many :items, class_name: 'Unidom::Order::OrderItem'`` macro
 2. Improve the Order Item spec for the ``belongs_to :order, class_name: 'Unidom::Order::Order'`` macro
 
 ## v1.5.3
