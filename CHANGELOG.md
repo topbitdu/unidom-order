@@ -75,7 +75,7 @@
 
 ## v1.5.3
 1. Improved the Order Item spec for the order_is scope
-2. Improve the Order Adjustment spec for the ``belongs_to :adjusted, polymorphic: true`` macro
+2. Improved the Order Adjustment spec for the ``belongs_to :adjusted, polymorphic: true`` macro
 
 ## v1.5.4
 1. Improve the Order Adjustment spec for the adjusted_is scope
