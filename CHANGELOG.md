@@ -79,7 +79,7 @@
 
 ## v1.5.4
 1. Improved the Order Adjustment spec for the adjusted_is scope
-2. Improve the Order model for the validations on the #purchase_amount attribute, & the #aggregate_amount attribute
+2. Improved the Order model for the validations on the #purchase_amount attribute, & the #aggregate_amount attribute
 3. Improve the Order spec for the validations on the #purchase_amount attribute, & the #aggregate_amount attribute
 
 ## v1.5.5
