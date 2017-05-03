@@ -74,7 +74,7 @@
 2. Improved the Order Item spec for the ``belongs_to :order, class_name: 'Unidom::Order::Order'`` macro
 
 ## v1.5.3
-1. Improved the Order Item spec for the order_is scope
+1. Improved the Order Item spec for the ``order_is`` scope
 2. Improved the Order Adjustment spec for the ``belongs_to :adjusted, polymorphic: true`` macro
 
 ## v1.5.4
