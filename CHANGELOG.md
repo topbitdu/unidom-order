@@ -86,7 +86,7 @@
 1. Improved the Order Adjustment model for the validations on the #amount attribute
 2. Improved the Order Item model for the validations on the #unit_price attribute, the #quantity attribute, the #purchase_amount attribute, & the #subtotal_amount attribute
 3. Improved the Order Adjustment spec for the validations on the #amount attribute
-4. Improve the Order Item spec for the validations on the #unit_price attribute, the #quantity attribute, the #purchase_amount attribute, & the #subtotal_amount attribute
+4. Improved the Order Item spec for the validations on the #unit_price attribute, the #quantity attribute, the #purchase_amount attribute, & the #subtotal_amount attribute
 
 ## v1.5.6
 1. Improve the Order Adjustment model for the argument validations of the .adjust! method
