@@ -65,7 +65,7 @@
 3. Validators RSpec examples manifest
 
 ## v1.5.1
-1. Improved the Order spec for the validations on the #``number`` attribute, the #``purchase_amount`` attribute, & the #aggregate_amount attribute
+1. Improved the Order spec for the validations on the #``number`` attribute, the #``purchase_amount`` attribute, & the #``aggregate_amount`` attribute
 2. Improved the Order Item spec for the validations on the #unit_price attribute, the #quantity attribute, the #purchase_amount attribute, & the #subtotal_amount attribute
 3. Improved the Order Adjustment spec for the validations on the #amount attribute, & the #adjustment_factor_code attribute
 
