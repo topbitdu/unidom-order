@@ -99,3 +99,7 @@
 ## v1.5.8
 1. As Order Taker shared examples
 2. Improve the RSpec shared examples manifest to require the As Order Taker shared examples
+
+## v1.5.9
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.10
+2. Improve the Order migration, the Order Item migration, & the Order Adjustment migration for the #opened_at column, & the #closed_at column
